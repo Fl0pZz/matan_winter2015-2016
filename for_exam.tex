@@ -1,0 +1,46 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel} 
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[normalem]{ulem}
+
+\ULdepth = 0.16em
+
+\begin{document}
+\section{Вопрос 1.}
+
+Числовой ряд $\sum\limits_{k=1}^\infty a_k$ называется \textbf{\uline{сходящимся}}, если существует конечный предел последовательности частичных сумм $S = \lim\limits_{n \to \infty} S_n$. Если предел последовательности частичных сумм числового ряда не существует или бесконечен, то ряд $\sum\limits_{k=1}^\infty a_k$ называется \textbf{\uline{расходящимся}}.\\\\
+
+\textbf{\uline{Суммой сходящегося числового ряда}} $\sum\limits_{k=1}^\infty a_k$ называется предел последовательности его частичных сумм, то есть, $\sum\limits_{k=1}^\infty a_k = \lim\limits_{n \to \infty} S_n = S$.\\\\
+
+\textbf{\uline{Арифметические свойства}}.\\
+Пусть даны числовые последовательности $\sum\limits_{k=1}^\infty x_k \to a$ и $\sum\limits_{k=1}^\infty y_k \to b$, тогда верны следующие свойства:
+\begin{enumerate}
+    \item $\lim\limits_{n \to \infty} (c_1 \cdot x_n \pm c_2 \cdot y_n) = c_1 \cdot \lim\limits_{n \to \infty} x_n \pm c_2 \cdot \lim\limits_{n \to \infty} y_n = c_1 \cdot a \pm c_2 \cdot b$
+    
+    \item $\lim\limits_{n \to \infty} ((c_1 \cdot x_n) \cdot (c_2 \cdot y_n)) = c_1 \cdot \lim\limits_{n \to \infty} x_n \cdot c_2 \cdot \lim\limits_{n \to \infty} y_n = c_1 \cdot a \cdot c_2 \cdot b$
+    
+    \item $\lim\limits_{n \to \infty} \frac{c_1 \cdot x_n}{c_2 \cdot y_n} = \frac{c_1 \cdot \lim\limits_{n \to \infty} x_n}{c_2 \cdot \lim\limits_{n \to \infty} y_n} = \frac{c_1 \cdot a}{c_2 \cdot b}, b \ne 0, y_n \ne 0, c_2 \ne 0$
+\end{enumerate}
+
+\textbf{\uline{Свойства остатков}}.\\
+Если ряд $\sum\limits_{k=1}^\infty a_k$ сходится, то сходится и любой его остаток. Если сходится какой-нибудь остаток ряда, то сходится и сам ряд.\\\\
+
+\textbf{\uline{Свойства группировки}}.\\
+Если ряд $A = \sum\limits_{k=1}^\infty a_k$ сходится, то ряд $B = \sum\limits_{j=1}^\infty b_j$ полученный путем группировки членов ряда $A$ без изменения порядка их расположения, также сходится и его сумма равна сумме ряда $A$.\\
+
+\textbf{\uline{Задача}}\\
+Найдите n-ю частичную сумму и сумму ряда $\sum\limits_{n = 1}^\infty \ln{(1 - n^{-2})}$.\\
+
+\underline{Решение:}\\
+С помощью необходимого признака сходимости, проверим, не расходится ли ряд:
+$$\lim\limits_{n \to \infty} \ln{(1 - n^{-2})} = \ln{\lim\limits_{n \to \infty} (1 - n^{-2})} = \ln{1} = 0$$
+Рассмотрим, что сокращается при суммировании $a_{n-1}$, $a_n$ и $a_{n+1}$:
+\begin{multline*}
+    a_{n-1} + a_{n} + a_{n+1} = \ln{(1 - (n-1)^{-2})} + \ln{(1 - n^{-2})} + \ln{(1 - (n+1)^{-2})} = \\ = \ln{\frac{(n-1)^2 - 1}{(n-1)^2}} + \ln{\frac{n^2 - 1}{n^2}} + \ln{\frac{(n+1)^2 - 1}{(n+1)^2}} = \ln{\frac{(n-1)-1}{n-1} \cdot \frac{(n-1)+1}{n-1}} + \\ + \ln{\frac{n-1}{n} \cdot \frac{n+1}{n}} + \ln{\frac{(n+1)-1}{n+1} \cdot \frac{(n+1)+1}{n+1}} = (\ln{(n)} - \ln{(n-1) + \ln{(n-2)} - \ln{(n-1)}}) + \\ + (\ln{(n + 1)} - \ln{(n) + \ln{(n-1)} - \ln{(n)}}) + (\ln{(n + 2)} - \ln{(n + 1) + \ln{(n)} - \ln{(n + 1)}}) = \\ = \ln{(n-2)} - \ln{(n-1)} + \ln{(n)} - \ln{(n + 1)}
+\end{multline*}
+Тогда $$S_n = \sum\limits_{k = 2}^n \ln{(1 - n^{-2})} = \ln{(2 - 1)} - \ln{2} + \ln{(n + 1)} - \ln{(n)} = \ln{\frac{n+1}{2n}}$$
+Откуда следует, что $$\lim\limits_{n \to \infty} \sum\limits_{k = 2}^n \ln{(1 - n^{-2})} = \lim\limits_{n \to \infty} \ln{\frac{n+1}{2n}} = \ln(\frac{1}{2}) = -\ln{2}$$
+\end{document}
