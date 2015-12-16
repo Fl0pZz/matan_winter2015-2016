@@ -43,4 +43,21 @@ $$\lim\limits_{n \to \infty} \ln{(1 - n^{-2})} = \ln{\lim\limits_{n \to \infty} 
 \end{multline*}
 Тогда $$S_n = \sum\limits_{k = 2}^n \ln{(1 - n^{-2})} = \ln{(2 - 1)} - \ln{2} + \ln{(n + 1)} - \ln{(n)} = \ln{\frac{n+1}{2n}}$$
 Откуда следует, что $$\lim\limits_{n \to \infty} \sum\limits_{k = 2}^n \ln{(1 - n^{-2})} = \lim\limits_{n \to \infty} \ln{\frac{n+1}{2n}} = \ln(\frac{1}{2}) = -\ln{2}$$
+
+\newpage
+\section{Вопрос 3.}
+\textbf{\uline{Критерий Коши}}.\\
+Пусть $\sum\limits_{k = 1}^\infty a_n$ неотрицательна, тогда $\lim\limits_{n \to \infty} \sqrt[n]{a_n} = \lambda$. При $\lambda > 1$ ряд расходится, при $\lambda < 1$ ряд сходится.\\
+
+\textbf{\uline{Доказательство расходимости гармонического ряда}}.\\
+Применим доказательство от противного , предположим, что гармонический ряд сводится к сумме $S$:
+$$\sum\limits_{k = 1}^\infty \frac{1}{k} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots = S$$
+Гармонический ряд можно представить в виде суммы 2х рядов:
+$$S = (1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots) + (\frac{1}{2} + \frac{1}{4} + \frac{1}{6} + \frac{1}{8} + \cdots)$$
+$$S = (1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots) + \frac{1}{2} \cdot (1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots)$$
+$$S = (1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots) + \frac{1}{2}S$$
+$$\frac{1}{2}S = 1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots$$
+$$\frac{1}{2} + \frac{1}{4} + \frac{1}{6} + \frac{1}{8} + \cdots = 1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots$$
+$$(1 - \frac{1}{2}) + (\frac{1}{3} - \frac{1}{4}) + \cdots \ne 0$$
+Отсюда получаем, что наше предположение не верно, а значит гармонический ряд расходится.
 \end{document}
