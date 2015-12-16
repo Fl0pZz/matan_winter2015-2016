@@ -6,6 +6,12 @@
 \usepackage{amsmath}
 \usepackage[normalem]{ulem}
 
+
+\usepackage{geometry} 
+\geometry{letterpaper}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
 \ULdepth = 0.16em
 
 \begin{document}
@@ -60,4 +66,60 @@ $$\frac{1}{2}S = 1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots$$
 $$\frac{1}{2} + \frac{1}{4} + \frac{1}{6} + \frac{1}{8} + \cdots = 1 + \frac{1}{3} + \frac{1}{5} + \frac{1}{7} + \cdots$$
 $$(1 - \frac{1}{2}) + (\frac{1}{3} - \frac{1}{4}) + \cdots \ne 0$$
 Отсюда получаем, что наше предположение не верно, а значит гармонический ряд расходится.
+
+\newpage
+\section{Вопрос 5.}
+Доказательства сами придумайте, я их в уши еб.\\
+
+\textbf{\uline{Признак Коши}}\\
+Пусть $\sum\limits_{k = 1}^\infty a_n$ неотрицательна, тогда $\lim\limits_{n \to \infty} \sqrt[n]{a_n} = \lambda$. При $\lambda > 1$ ряд расходится, при $\lambda < 1$ ряд сходится.\\
+
+\textbf{\uline{Интрегральный признак сходимости}}\\
+Пусть $f(x)$ монотона на $[1, \infty]$. $\sum\limits_{n = 1}^\infty f(x)$ сходится $\Leftrightarrow$ сходится $\int\limits_{1}^\infty f(x) dx$.\\
+
+\textbf{\uline{Признак Даламбера}}\\
+Пусть $\sum\limits_{k = 1}^\infty a_n$ неотрицательна, $\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n} = \lambda$. При $\lambda > 1$ ряд расходится, при $\lambda < 1$ ряд сходится.\\
+
+\newpage
+\section{\underline{Вопрос 20}}
+\underline{Измеримое по Жордану множество в $R^{n}$}\\
+
+Множество $\Pi = \{(x_{1}, x_{2}, ... , x_{n}): a_{i} \leq x_{i} < b_{i}, i = 1, ... , n\}$ будем называть клеткой в $R^{n}$. Пустое множество тоже считается клеткой. Множество $A\in R^{n}$ клеточное, если оно является объединением конечного числа попарно непересекающихся клеток. \\
+Мерой $m(\Pi)$ клетки называется число
+\[m(\Pi) = (b_{1} - a_{1})\times...\times(b_{n} - a_{n})\]
+Если непересекающиеся клетки $\Pi_{1}, ..., \Pi_{n}$ образуют разбиение клеточного множества $A$, то мерой клеточного множества $A$ назовем число
+\[m(A) = \sum_{i = 1}^{n} m(\Pi_{i})\]
+Множество $\Omega\subset R^{n}$ называется измеримым по Жордану, если для любого $\varepsilon > 0$ найдутся два клеточных множества $A$ и $B$ такие, что $A\subset\Omega\subset B$ и $m(B) - m(A) <\varepsilon$. (По сути, измерить множество по Жордану - значит попробовать воссоздать его с помощью прямоугольников)\\
+
+\underline{Задача}
+
+Найдите два клеточных множества $A$ и $B$ таких, чтобы $A\subset\Omega\subset B, m(B) - m(A) \leq 1.5$, если $\Omega = \{(x,y): 0\leq y \leq x, 0 \leq x \leq 3\}$.\\
+
+\underline{Решение}
+
+Чтобы понять решение, необходимо нарисовать все 3 множества на плоскости $XOY$.\\
+
+Пусть множество $A$ - объединение клеток:\\
+$\{(x, y): 0.5 \leq x \leq 1, 0 \leq y \leq 0.5\}$,\\
+$\{(x, y): 1 \leq x \leq 3, 0 \leq y \leq 1\}$,\\
+$\{(x, y): 1.5 \leq x \leq 2, 1 \leq y \leq 1.5\}$,\\
+$\{(x, y): 2.5 \leq x \leq 3, 2 \leq y \leq 2.5\}$,\\
+$\{(x, y): 2 \leq x \leq 3, 1 \leq y \leq 2\}$.
+
+\[m(A) = 3\frac{3}{4}\]
+
+Пусть множество $B$ - объединение клеток:
+$\{(x, y): 0 \leq x \leq 1, 0 \leq y \leq 0.5\}$,\\
+$\{(x, y): 0.5 \leq x \leq 1, 0.5 \leq y \leq 1\}$,\\
+$\{(x, y): 1 \leq x \leq 3, 0 \leq y \leq 1\}$,\\
+$\{(x, y): 1 \leq x \leq 2, 1 \leq y \leq 1.5\}$,\\
+$\{(x, y): 1.5 \leq x \leq 2, 1.5 \leq y \leq 2\}$,\\
+$\{(x, y): 2 \leq x \leq 3, 2 \leq y \leq 2.5\}$,\\
+$\{(x, y): 2 \leq x \leq 3, 1 \leq y \leq 2\}$,\\
+$\{(x, y): 2.5 \leq x \leq 3, 2.5 \leq y \leq 3\}$.
+
+\[m(B) = 5\frac{1}{4}\]
+
+\[m(B) - m(A) = 1.5\]
+\newpage
 \end{document}
