@@ -53,7 +53,10 @@ $$\lim\limits_{n \to \infty} \ln{(1 - n^{-2})} = \ln{\lim\limits_{n \to \infty} 
 \newpage
 \section{Вопрос 3.}
 \textbf{\uline{Критерий Коши}}.\\
-Пусть $\sum\limits_{k = 1}^\infty a_n$ неотрицательна, тогда $\lim\limits_{n \to \infty} \sqrt[n]{a_n} = \lambda$. При $\lambda > 1$ ряд расходится, при $\lambda < 1$ ряд сходится.\\
+Ряд $\sum\limits_{n = 1}^\infty z_n$ сходится тогда и только тогда, когда для него выполняется условие Коши: для каждого $\varepsilon > 0$ существует номер $N_{\varepsilon}$ такой, что для любого $n \ge N_{\varepsilon}$ и для любого $p \in N$ справедливо равенство:
+$$|z_{n+1} + Z_{n+2} + \cdots +Z_{n+p}| < \varepsilon$$
+Или другими словами:
+$$\forall \varepsilon > 0 \exists N_{\varepsilon} \forall n \ge N_{\varepsilon} \forall p \in N: |z_{n+1} + Z_{n+2} + \cdots +Z_{n+p}| < \varepsilon$$
 
 \textbf{\uline{Доказательство расходимости гармонического ряда}}.\\
 Применим доказательство от противного , предположим, что гармонический ряд сводится к сумме $S$:
