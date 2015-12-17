@@ -89,9 +89,30 @@ $$(1 - \frac{1}{2}) + (\frac{1}{3} - \frac{1}{4}) + \cdots \ne 0$$
 Воспользуемся признаком сходимости Коши:
 $$\lim\limits_{n \to \infty} \sqrt[n]{\frac{(2n)!!}{n!} \arcsin{(3^{-n})}} = \lim\limits_{n \to \infty} \sqrt[n]{2^n \cdot 3^{-n}} = \lim\limits_{n \to \infty} \sqrt[n]{\left(\frac{2}{3}\right)^n} = \frac{2}{3} < 1$$
 Откуда понятно, что ряд сходится.
+\newpage
+
+\section{Вопрос 6.}
+Ряд называется \textbf{\uline{знакочередующимся}}, если его члены попеременно принимают значения противоположных знаков, т. е.:
+$$\sum\limits_{n = 1}^\infty b_n = \sum\limits_{n = 1}^\infty (-1)^{n}a_n, a_n > 0$$
+\textbf{\uline{Признак Лейбница}}\\
+Если для знакочередующегося ряда $\sum\limits_{n = 1}^\infty b_n = \sum\limits_{n = 1}^\infty (-1)^{n}a_n, a_n > 0$ выполняются следующие условия:
+\begin{enumerate}
+    \item $a_{n+1} < a_n$ (монотонное убывание $\{ a_n\}$)
+    \item $\lim\limits_{n \to \infty} a_n = 0$
+\end{enumerate}
+Тогда этот ряд сходится.\\\\
+\textbf{\uline{Задача}}\\
+Исследуйте на сходимость ряд $\sum\limits_{n = 1}^\infty (-1)^{n} \left(1 - \cos{\frac{\pi}{\sqrt{n}}}\right)$.\\
+\textbf{\uline{Решение}}\\
+Воспользуемся признаком Лейбница:\\
+\begin{enumerate}
+    \item $1 - \cos{\frac{\pi}{\sqrt{n + 1}}} < 1 - \cos{\frac{\pi}{\sqrt{n}}}$, т.к $\cos{\frac{\pi}{\sqrt{n+1}}} > \cos{\frac{\pi}{\sqrt{n}}}$
+    \item $\lim\limits_{n \to \infty} \left( 1 - \cos{\frac{\pi}{\sqrt{n}}} \right) = 1 - 1 = 0$
+\end{enumerate}
+Откуда следует, что ряд сходится.
 
 \newpage
-\section{\underline{Вопрос 20}}
+\section{Вопрос 20}
 \underline{Измеримое по Жордану множество в $R^{n}$}\\
 
 Множество $\Pi = \{(x_{1}, x_{2}, ... , x_{n}): a_{i} \leq x_{i} < b_{i}, i = 1, ... , n\}$ будем называть клеткой в $R^{n}$. Пустое множество тоже считается клеткой. Множество $A\in R^{n}$ клеточное, если оно является объединением конечного числа попарно непересекающихся клеток. \\
@@ -132,4 +153,5 @@ $\{(x, y): 2.5 \leq x \leq 3, 2.5 \leq y \leq 3\}$.
 
 \[m(B) - m(A) = 1.5\]
 \newpage
+
 \end{document}
