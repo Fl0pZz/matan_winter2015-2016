@@ -110,6 +110,28 @@ $$\sum\limits_{n = 1}^\infty b_n = \sum\limits_{n = 1}^\infty (-1)^{n}a_n, a_n >
     \item $\lim\limits_{n \to \infty} \left( 1 - \cos{\frac{\pi}{\sqrt{n}}} \right) = 1 - 1 = 0$
 \end{enumerate}
 Откуда следует, что ряд сходится.
+\newpage
+
+\section{Вопрос 7.}
+Ряд $\sum\limits_{n = 1}^\infty a_n$ является абсолютно сходящимся, если сходитcя ряд из его модулей: $\sum\limits_{n \to \infty}^\infty |a_n|$.
+\textbf{\uline{Свойство 1}}: Абсолютно сходяйщися ряд сходится, т.е из сходимости ряда $\sum\limits_{n \to \infty}^\infty |a_n|$ следует сходимость ряда $\sum\limits_{n = 1}^\infty a_n$, причем $|S| \le \sigma$,  где $S = \sum\limits_{n = 1}^\infty a_n$, а $\sigma = \sum\limits_{n \to \infty}^\infty |a_n|$.\\\\
+\textbf{\uline{Свойство 2}}: Если ряды  $\sum\limits_{n = 1}^\infty a_n$ и $\sum\limits_{n = 1}^\infty b_n$ абсолютно сходятся, то при любях $\alpha$ и $\beta$ ряд\\ $\sum\limits_{n = 1}^\infty (\alpha a_n + \beta b_n)$ также абсолютно сходится.\\\\
+\textbf{\uline{Свойство 3}}: Если ряд $\sum\limits_{n = 1}^\infty a_n$ абсолютно сходится, то ряд, составленый из тех же членов, но взятых в другом порядке, также абсолютно сходится, и его сумма равна сумме исходного ряда.\\\\
+\textbf{\uline{Свойство 4}}: Если ряды  $\sum\limits_{n = 1}^\infty a_n$ и $\sum\limits_{n = 1}^\infty b_n$ абсолютно сходятся, то ряд, составленный из всевозможных попарных произведений $a_i \cdot b_i$ членов этих рядов, расположенных в любом порядке, также абсолютно сходится, а его сумма равна $S\sigma$, где $S = \sum\limits_{n = 1}^\infty a_n$, $\sigma = \sum\limits_{n = 1}^\infty b_n$.\\\\
+\textbf{\uline{Задача}}\\
+Исследуйте на абсолютную и условную сходимости ряд $\sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cos{\pi n}$.\\
+\textbf{\uline{Решение}}\\
+Заметим, что $\sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cos{\pi n} = \sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cdot (-1)^n$.
+Предположим, что ряд абсолютно сходится. Тогда рассмотрим сходимость ряда:
+$$\sum\limits_{n = 3}^\infty \left | \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cdot (-1)^n \right | = \sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}}$$
+Воспользуемся интегральным признаком ($t = \ln{n}$, $k = \ln{t}$):
+$$\int\limits_3^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} dn = \int\limits_{\ln{3}}^\infty \frac{\ln^2{t}}{t} dt = \int\limits_{\ln{\ln{3}}}^\infty k^2 dk$$
+Откуда видно, что ряд расходится. Т.к первоначальный ряд получился знакочередующийся, то проверим признак Лейбница:
+\begin{enumerate}
+\item $\frac{\ln^2{(\ln{(n + 1)})}}{(n + 1) \ln{(n + 1)}} < \frac{\ln^2{(\ln{n})}}{n \ln{n}}$
+\item $\lim\limits_{n \to \infty} \frac{\ln^2{(\ln{n})}}{n \ln{n}} = 0$
+\end{enumerate}
+Признак выполняется, значит ряд $\sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cos{\pi n}$ сходится. Теперь ясно, что ряд имеет условную сходимость.
 
 \newpage
 \section{Вопрос 20}
