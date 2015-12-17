@@ -135,8 +135,67 @@ $$\int\limits_3^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} dn = \int\limits_{\ln{3}
 \item $\lim\limits_{n \to \infty} \frac{\ln^2{(\ln{n})}}{n \ln{n}} = 0$
 \end{enumerate}
 Признак выполняется, значит ряд $\sum\limits_{n = 3}^\infty \frac{\ln^2{(\ln{n})}}{n \ln{n}} \cos{\pi n}$ сходится. Теперь ясно, что ряд имеет условную сходимость.
+\newpage
+
+\section{\underline{Вопрос 8.}}
+
+\textbf{\underline{Признак Дирихле:}} \\
+    Ряд \( \sum_{n = 1}^{\infty} a_n b_n \) сходится, если последовательность частичных сумм ряда \( \sum_{n = 1}^{\infty} b_n \) ограничена, т. е.
+    \begin{equation}
+        \exists M > 0\vert\ \forall n \in \mathbb{N}\quad \left| \sum_{i = 1}^{n}b_i \right| \leq M,
+    \end{equation}
+    а последовательность \( \{a_n\} \) монотонно стремится к нулю, т. е. 
+    \begin{equation*}
+        \exists n_0 \in \mathbb{N}\, \vert\ \forall n > n_0 \quad a_n \geq a_{n + 1} \quad \text{ или  }  \quad a_{n + 1} \geq a_{n}
+    \end{equation*}
+     и \( \lim_{n \rightarrow \infty} a_n = 0 \).
+\\
+
+\textbf{\underline{Признак Абеля:}} \\
+    Ряд \( \sum_{n = 1}^{\infty} a_n b_n \) сходится, если сходится ряд \( \sum_{n = 1}^{\infty} b_n \), а последовательность \( \{a_n\} \) монотонна и ограничена.
+\\
+
+\textbf{\underline{Условно сходящийся ряд:}} \\
+    Ряд \( \sum_{n = 1}^{\infty} a_n \) называется условно сходящимся, если ряд \( \sum_{n = 1}^{\infty} a_n \) сходится, а ряд \( \sum_{n = 1}^{\infty} \left| a_n \right| \) расходится.
+\\
+
+\textbf{\underline{Теорема Римана:}} \\
+    Если ряд \( \sum_{n = 1}^{\infty} a_n \) условно сходится, то \( \forall S \in \mathbb{R} \cup \{\pm \infty\} \) существует такая перестановка членов этого ряда, после которой он будет сходиться к этому числу \( S \).
+\\
+
+\textbf{\underline{Задача:}} \\
+Исследуйте на сходимость ряд \( \sum_{n = 1}^{\infty} (\sqrt[n]{n} - 1) \cdot \sin n \).
+\\
+
+\underline{Решение:} \\
+Покажем, что последовательность частичных сумм ряда \( \sum_{n = 1}^{\infty} \sin n \) ограничена сверху. \par
+Из формулы разности косинусов:
+\begin{equation*}
+    \cos(k - \frac{1}{2}) - \cos(k + \frac{1}{2}) = -2\sin k \cdot \sin (-\frac{1}{2}) = 2\sin k \cdot \sin \frac{1}{2}.
+\end{equation*} 
+Просуммируем левую и правую части от \( 1 \) до \( n \).
+\begin{equation*}
+    2\sin \frac{1}{2} \cdot \sum_{k = 1}^{n} \sin k = \cos \frac{1}{2} - \cos \frac{3}{2} + \cos \frac{3}{2} - \dotsc + \cos(n - \frac{1}{2}) - \cos(n + \frac{1}{2}) = \cos \frac{1}{2} - \cos(n + \frac{1}{2}).
+\end{equation*}
+Отсюда
+\begin{equation*}
+    \sum_{k = 1}^{n} \sin k = \frac{\cos \frac{1}{2} - \cos(n + \frac{1}{2})}{2\sin \frac{1}{2}} \leq \frac{1 + \cos \frac{1}{2}}{2\sin\frac{1}{2}}.
+\end{equation*}
+
+Теперь покажем, что последовательность \( \{ \sqrt[n]{n} - 1 \} \) монотонно стремится к нулю.
+\begin{equation*}
+    \sqrt[n]{n} - 1 > \sqrt[n + 1]{n + 1} - 1\ \Leftrightarrow\ n^{n + 1} > (n + 1)^n\ \Leftrightarrow\ n > \left(1 + \frac{1}{n} \right)^n
+\end{equation*}
+при \( n > e \). Значит, последовательность монотонно убывает, начиная с \( n = 3 \). С другой стороны, 
+\begin{equation*}
+    \lim_{n \rightarrow \infty} (\sqrt[n]{n} - 1) = e^{\lim_{n \rightarrow \infty} \frac{\ln n}{n}} - 1 = e^{\lim_{n \rightarrow \infty} \frac{1}{n}} - 1 = 1 - 1 = 0.
+\end{equation*}
+Таким образом, последовательность стремится к нулю. \par
+
+Итак, последовательность частичных сумм ряда \( \sum_{n = 1}^{\infty} \sin n \) ограничена сверху, а последовательность \( \{ \sqrt[n]{n} - 1 \} \) монотонно стремится к нулю. Значит, по признаку Дирихле, ряд \( \sum_{n = 1}^{\infty} (\sqrt[n]{n} - 1) \cdot \sin n \) сходится.
 
 \newpage
+
 \section{Вопрос 20}
 \underline{Измеримое по Жордану множество в $R^{n}$}\\
 
