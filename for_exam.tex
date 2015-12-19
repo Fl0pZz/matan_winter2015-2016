@@ -238,4 +238,105 @@ $\{(x, y): 2.5 \leq x \leq 3, 2.5 \leq y \leq 3\}$.
 \[m(B) - m(A) = 1.5\]
 \newpage
 
+
+\section{\underline{Вопрос 39}}
+  Векторное поле $\overline{F}$ - потенциальное, если  $\overline{F} = grad(u)$ Функция u называется потенциалом векторного поля $\overline{F}$. Поле $\overline{F} = (P, Q, R)$ потенциально в односвязной области тогда и только тогда, когда $rot(\overline{F}) = \overline{0}$ или $\frac{dR}{dy} = \frac{dQ}{dz}, \quad \frac{dP}{dz} = \frac{dR}{dx}, \quad \frac{dQ}{dx} = \frac{dP}{dy}$  Потенциал в этом случае можно найти, например, по формуле
+\[
+    u(x, y, z) = \int_{x_0}^x P(x, y, z)dx + \int_{y_0}^y Q(x_0, y, z)dy + \int_{z_0}^z R(x_0, y_0, z_0)dz + C
+\]
+\[
+rot(\overline{F}) = \begin{bmatrix}\vec{i} && \vec{j} && \vec{k} \\ \frac{d}{dx} && \frac{d}{dy} && \frac{d}{dz} \\ \frac{du}{dx} && \frac{du}{dy} && \frac{du}{dz} \end{bmatrix} = 0
+\]
+Если поле потенциально \\ \\
+
+\underline{Решение} \\ \\
+Показать, что F = $(3x^2y+xy^2)i + (x^3+x^2y)j$ = потенциально и найти его потенциал \\
+P = $(3x^2y+xy^2)$ \\
+Q = $(x^3+x^2y)$ \\
+R = 0 \\
+Покажем, что поле потенциально:
+\[
+\frac{dR}{dy} = \frac{dQ}{dz}: 0 = 0; \quad \frac{dP}{dz} = \frac{dR}{dx}: 0 = 0; \quad \frac{dQ}{dx} = \frac{dP}{dy}: 3x^2+2xy = 3x^2+2xy
+\]
+Найдем его потенциал:
+\[
+    u(x, y, z) = \int_{x_0}^x P(x, y, z)dx + \int_{y_0}^y Q(x_0, y, z)dy + \int_{z_0}^z R(x_0, y_0, z_0)dz + C
+\]
+Функции непрерывны во всех точках, поэтому возьмем точку (0, 0, 0)
+\[
+    \int_0^x (3x^2y+xy^2)dx + \int_0^y (x^3+x^2y)dy + \int_0^z 0dz + C = x^3y+\frac{x^2y^2}{2}+x^3y+\frac{x^2y^2}{2} + C = 2x^3y+x^2y^2 + C
+\]
+\newpage
+
+
+\section{\underline{Вопрос 40}}
+Пусть $\Omega$ - ограниченная область в $R^2$, а функции $\Phi(u, v), \Psi(u, v), \Xi(u, v)$ непрерывно дифференцируемы на замкнутом множестве $\bar{\Omega} = \Omega \cup \partial\Omega$, где $\partial\Omega$ - граница области $\Omega$. Тогда отображение $F = \bar{\Omega} \to R^3$, определяемое формулами 
+\[
+x = \Phi(u, v), \quad y = \Psi(u, v), \quad z = \Xi(u, v), \quad (u, v) \in \bar{\Omega}
+\]
+Является непрерывно дифференцируемым. Если при этом в каждой точке (u, v) ранг функциональной матрицы
+\[
+\begin{vmatrix} \Phi_u(u, v) && \Psi_u(u, v) && \Xi_u(u, v) \\ \Phi_v(u, v) && \Psi_v(u, v) && \Xi_v(u, v) \end{vmatrix}
+\]
+равен двум, то отображение называется гладким. \\
+Если $\bar{\Omega}$ есть замкнутое ограниченное множество в $R^2$, а $F = \bar{\Omega} \to R^3$
+есть такое гладкое отображение, что соответствие между множествами $\bar{\Omega}$ и
+$\Sigma = F(\bar{\Omega})$ является взаимнооднозначным, то $\Sigma$ - простая поверхность в $R^3$,
+а уравнения $\Phi(u, v), \Psi(u, v), \Xi(u, v)$ - параметрические уравнения простой поверхности $\Sigma$. \\ \\
+Пусть $\Omega$ - плоская область и $F: \bar{\Omega} \to R^3$ - непрерывно дифференцируемое отображение. Будем
+множество $\Sigma = F(\bar{\Omega})$ считать \underline{почти простой поверхностью} в $R^3$, если найдется
+расширяющая последовательность $\{\Omega_n\}$ таких, что
+$\bar{\Omega_n} \subset \Omega_{n+1}, \Omega = \bigcup_{n=1}^\infty \Omega_n$ и поверхности $\Sigma_n =
+F(\bar{\Omega_n})$ простые. \\ \\
+Запишите поверхность $x^2 + y^2 = z^2 - 1$ в параметрическом виде. \\
+Двухполостной гиперболоид. Каноническое уравнение: 
+\[
+\frac{(x-x_0)^2}{a^2} + \frac{(y-y_0)^2}{b^2} - \frac{(z-z_0)^2}{c^2} = - 1
+\]
+Параметрические уравнения:
+\[
+ \begin{cases}
+  x = 0 + 1*\text{ch(u)}, \\
+  y = 0 + 1*\text{sh(u)}, \\
+  z = 0 + 1*\text{v, \quad u, v} \in (-\infty; \infty)
+ \end{cases}
+\] 
+\\ \\
+Является простой поверхностью (взаимно-однозначное отображение плоскости)
+\newpage
+
+\section{\underline{Вопрос 50}}
+
+Пусть $\overline{F} = P \overline{i} + Q \overline{j} + R \overline{k}. $
+Тогда его дивергенция \[div \overline{F} = (\overline{\nabla}, \overline{F}) =
+div \overline{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}.\]
+
+\[
+r = x \overline{i} + y \overline{j} + z \overline{k} \Longrightarrow P = x, Q = y, R = x.
+\]
+
+\[
+|r|^3 = (\sqrt{x^2 + y^2 + z^2})^3 = (x^2 + y^2 + z^2)^{3/2}.
+\]
+
+\[
+\overline{F} = \frac{r}{|r^3|} \Longrightarrow P = \Bigl( \frac{x}{(x^2 + y^2 + z^2)^{3/2}} \Bigr)'_x = 
+\frac{(x^2 + y^2 + z^2)^{3/2} - x \cdot \frac{3}{2} \cdot (x^2 + y^2 + z^2)^{1/2} \cdot 2 x}{(x^2 + y^2 + z^2)^3} = 
+\]
+
+\[
+= \frac{x^2 + y^2 + z^2 - 3x^2}{(x^2 + y^2 + z^2)^{5/2}} = \frac{-2 x^2 + y^2 + z^2}{(x^2 + y^2 + z^2)^{5/2}}.
+\]
+
+Аналогично, 
+\[
+Q'_y = \frac{-2 y^2 + x^2 + z^2}{(x^2 + y^2 + z^2)^{5/2}}, R'_z = \frac{-2 z^2 + y^2 + x^2}{(x^2 + y^2 + z^2)^{5/2}}.
+\]
+
+Значит,
+\[
+div \overline{F} = \frac{-2 \cdot (x^2 + y^2 + z^2) + 2 \cdot ( x^2 + y^2 + z^2)}{(x^2 + y^2 + z^2)^{5/2}} = 0.
+\]
+\newpage
+
 \end{document}
